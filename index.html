@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineArena.live</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #242424, #3b5998);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .player-container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+
+        .player-container iframe {
+            border-radius: 15px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ad-container {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .join-telegram-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .join-telegram-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #008fd6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .join-telegram-btn:hover {
+            background-color: #006bb3;
+        }
+    </style>
+</head>
+    <body>
+    
+    <!-- Ad Above Video Player -->
+    
+    
+    <!-- Video Player Section -->
+    <div class="player-container">
+        <div style="position:relative;padding-top:56.25%;">
+            <iframe id="contentFrame" 
+            src="https://vimeo.com/event/5064885/embed" 
+            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen 
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:15px;"></iframe>
+        </div>
+    </div>
+    
+    <!-- Ad Below Video Player -->
+
+    
+    <!-- Join Telegram Button -->
+    <div class="join-telegram-container">
+        <button class="join-telegram-btn" onclick="window.open('https://t.me/cric_stream', '_blank')">Join Telegram Channel</button>
+    </div>
+
+<!-- Anti-Adblock Popup -->
+<div class="adb" id="adb" style="display: none;">
+    <div class="adbs">
+        <h3>Adblock Detected</h3>
+        <p>Please disable adblock to proceed to the destination page</p>
+    </div>
+</div>
+
+<style>
+    .adb {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgba(51, 51, 51, 0.9);
+        z-index: 10000;
+        text-align: center;
+        color: #111;
+    }
+
+    .adbs {
+        margin: 0 auto;
+        width: auto;
+        min-width: 400px;
+        position: fixed;
+        z-index: 99999;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px 30px 30px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 12px;
+    }
+</style>
+
+<script type="text/javascript">
+    async function detectAdBlock() {
+        let adBlockEnabled = false;
+        const googleAdUrl = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 3000); // 3s timeout
+
+            await fetch(new Request(googleAdUrl), { signal: controller.signal })
+                .then(() => clearTimeout(timeoutId))
+                .catch(error => {
+                    if (error.name === 'AbortError') return; // Ignore timeout errors
+                    adBlockEnabled = true;
+                });
+
+        } catch (e) {
+            adBlockEnabled = true;
+        }
+
+        if (adBlockEnabled) {
+            document.getElementById("adb").style.display = "block";
+        }
+    }
+
+    detectAdBlock();
+</script>
+</body>
+    <script type='text/javascript' src='//eltontry.com/63/88/ac/6388ace5c2a702a7b58f724683244363.js'></script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+<script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool@latest'></script>
+</html>
